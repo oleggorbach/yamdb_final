@@ -67,6 +67,8 @@ docker-compose exec web python manage.py loaddata --format json /app/fixtures.js
 6. Проверьте доступность сервиса
 http://localhost/admin
 
+http://130.193.55.211/admin
+
 
 ### Как запустить проект в virtualenv:
 
