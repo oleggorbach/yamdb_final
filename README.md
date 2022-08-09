@@ -60,8 +60,10 @@ docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 
 Наполните базу данных тестовыми данными
-docker container cp .infra/fixtures.json CONTAINER:/app
-docker-compose exec web python manage.py loaddata --format json /app/fixtures.json
+cd infra/
+docker container ls
+docker container cp fixtures.json CONTAINER ID:/app #web container 
+docker-compose exec web python manage.py loaddata fixtures.json
 Имя пользователя и пароль в fixtures.json: admin - 123
 
 6. Проверьте доступность сервиса
